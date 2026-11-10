@@ -1,6 +1,6 @@
-# Sesión 11 · Tracks con Supabase
+# Sesión 12 · Tracks con Supabase
 
-Repositorio de arranque del taller de la sesión 11 del Seminario de Ingeniería de
+Repositorio de arranque del taller de la sesión 12 del Seminario de Ingeniería de
 Software.
 
 ```shell

@@ -1,6 +1,6 @@
 # AGENTS.md
 
-App Flutter de práctica de la sesión 11 del Seminario: una lista de tracks
+App Flutter de práctica de la sesión 12 del Seminario: una lista de tracks
 guardada en la tabla `tracks` de Supabase.
 
 ## Estructura
