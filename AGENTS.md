@@ -18,7 +18,8 @@ guardada en la tabla `tracks` de Supabase.
 - `id` uuid, llave primaria, la genera la base de datos.
 - `name` text, obligatorio.
 - `artist_name` text, obligatorio.
-- `image_url` text, por defecto `https://picsum.photos/400`.
+- `image_url` text, puede ser null. Si llega null, la app usa
+  `Track.defaultImageUrl` (`https://picsum.photos/400`).
 
 ## Reglas
 

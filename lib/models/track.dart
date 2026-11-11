@@ -19,7 +19,7 @@ class Track {
       id: map['id'] as String,
       name: map['name'] as String,
       artistName: map['artist_name'] as String,
-      imageUrl: map['image_url'] as String,
+      imageUrl: map['image_url'] as String? ?? defaultImageUrl,
     );
   }
 
