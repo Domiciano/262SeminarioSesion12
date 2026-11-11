@@ -13,11 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Track> _tracks = [];
 
-  void _addTrack(Track track) {
-    setState(() {
-      _tracks = [..._tracks, track];
-    });
-  }
+  void _addTrack(Track track) {}
 
   void _deleteTrack(Track track) {
     setState(() {
