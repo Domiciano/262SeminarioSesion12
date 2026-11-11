@@ -13,10 +13,7 @@ class HomeScreen extends StatefulWidget {
 class _HomeScreenState extends State<HomeScreen> {
   List<Track> _tracks = [];
 
-  void _addTrack(Track draft) {
-    final track = draft.copyWith(
-      id: '${DateTime.now().microsecondsSinceEpoch}',
-    );
+  void _addTrack(Track track) {
     setState(() {
       _tracks = [..._tracks, track];
     });
@@ -24,7 +21,7 @@ class _HomeScreenState extends State<HomeScreen> {
 
   void _deleteTrack(Track track) {
     setState(() {
-      _tracks = _tracks.where((t) => t.id != track.id).toList();
+      _tracks = _tracks.where((t) => t != track).toList();
     });
   }
 
