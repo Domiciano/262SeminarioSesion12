@@ -2,8 +2,14 @@ import 'package:flutter/material.dart';
 import 'package:track_app/screens/add_track_screen.dart';
 import 'package:track_app/screens/home_screen.dart';
 import 'package:track_app/screens/track_detail_screen.dart';
+import 'package:supabase_flutter/supabase_flutter.dart';
 
-void main() {
+Future<void> main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+  await Supabase.initialize(
+    url: 'https://rhvsnecilpodeziqmkrg.supabase.co',
+    publishableKey: 'sb_publishable_JVgbj4c0tXlMB5hqB9VUtQ_oGT3xwZq',
+  );
   runApp(const App());
 }
 
@@ -20,7 +26,7 @@ class App extends StatelessWidget {
       routes: {
         '/': (context) => const HomeScreen(),
         '/track': (context) => const TrackDetailScreen(),
-        '/add-track': (context) => const AddTrackScreen(),
+        '/add-track': (context) => AddTrackScreen(),
       },
     );
   }
