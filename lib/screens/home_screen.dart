@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:track_app/components/track_list.dart';
 import 'package:track_app/models/track.dart';
+import 'package:track_app/services/track_services.dart';
 
 /// Screen that owns the list of tracks and opens the other screens.
 class HomeScreen extends StatefulWidget {
@@ -12,8 +13,29 @@ class HomeScreen extends StatefulWidget {
 
 class _HomeScreenState extends State<HomeScreen> {
   List<Track> _tracks = [];
+  TrackService service = TrackService();
 
-  void _addTrack(Track track) {}
+  @override
+  void initState() {
+    super.initState();
+    handleGetTracks(); //Genera un proceso en segundo plano
+  }
+
+  //Funcion auxiliar
+  Future<void> handleGetTracks() async {
+    List<Track> response = await service.getTracks();
+    //
+    setState(() {
+      _tracks = response;
+    });
+  }
+
+  void _addTrack(Track track) {
+    //En este punto tenemos el nuevo track a la entrada. El track recien creado
+    setState(() {
+      _tracks = [..._tracks, track];
+    });
+  }
 
   void _deleteTrack(Track track) {
     setState(() {

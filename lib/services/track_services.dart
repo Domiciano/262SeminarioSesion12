@@ -6,7 +6,9 @@ class TrackService {
   final SupabaseClient _client = Supabase.instance.client; //2
 
   Future<List<Track>> getTracks() async {
-    return [];
+    final rows = await _client.from('tracks').select();
+    print(rows);
+    return rows.map(Track.fromMap).toList();
   }
 
   Future<Track> createTrack(Track track) async {
